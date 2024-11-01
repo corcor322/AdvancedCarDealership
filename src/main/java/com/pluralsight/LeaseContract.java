@@ -1,8 +1,9 @@
 package com.pluralsight;
 
 public class LeaseContract extends Contract{
-    private double expectedEndValue;
-    private double leaseFee;
+    private double stickerPrice;
+    private double expectedEndValue = stickerPrice * 0.5;
+    private double leaseFee = stickerPrice * 0.07;
     private double monthlyPayment;
     private double totalPrice;
     public LeaseContract(String dateOfContract, String customerName, String customerEmail, String vehicle) {
@@ -27,11 +28,13 @@ public class LeaseContract extends Contract{
 
     @Override
     public double getMonthlyPayment() {
+        monthlyPayment = stickerPrice * 0.04;
         return monthlyPayment;
     }
 
     @Override
     public double getTotalPrice() {
+        totalPrice = monthlyPayment * 36 + leaseFee;
         return totalPrice;
     }
 }
