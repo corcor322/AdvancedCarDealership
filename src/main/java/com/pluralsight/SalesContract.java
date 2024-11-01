@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 public class SalesContract extends Contract{
+    private double stickerPrice;
     private double salesTax = 0.05;
     private double recordingFee = 100.0;
     private double processingFee;
@@ -52,11 +53,30 @@ public class SalesContract extends Contract{
 
     @Override
     public double getMonthlyPayment() {
+        if (finance = false) {
+            return 0;
+        }else
+            if (stickerPrice < 10000) {
+               monthlyPayment = stickerPrice * 0.0425;
+            } else
+                monthlyPayment = (stickerPrice * 0.0525;
         return monthlyPayment;
     }
 
     @Override
     public double getTotalPrice() {
+        if (stickerPrice < 10000) {
+            processingFee = 295;
+        } else
+            processingFee = 495;
+
+        if (finance = false) {
+            totalPrice = (stickerPrice + recordingFee + processingFee) * salesTax;
+        }else if (finance = true && stickerPrice < 10000) {
+            totalPrice = (((stickerPrice * 0.0425) * 48) + recordingFee + processingFee) * salesTax;
+        }else
+            totalPrice = (((stickerPrice * 0.0525) * 24) + recordingFee + processingFee) * salesTax;
+
         return totalPrice;
     }
 }
