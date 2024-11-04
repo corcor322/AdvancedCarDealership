@@ -2,8 +2,8 @@ package com.pluralsight;
 
 public class SalesContract extends Contract{
     private double stickerPrice;
-    private double salesTax = 0.05;
-    private double recordingFee = 100.0;
+    private double salesTax;
+    private double recordingFee;
     private double processingFee;
     private boolean finance;
     private double monthlyPayment;
@@ -17,6 +17,14 @@ public class SalesContract extends Contract{
         this.processingFee = 295;
         this.finance = false;
 
+    }
+
+    public double getStickerPrice() {
+        return stickerPrice;
+    }
+
+    public void setStickerPrice(double stickerPrice) {
+        this.stickerPrice = stickerPrice;
     }
 
     public double getSalesTax() {
@@ -59,7 +67,7 @@ public class SalesContract extends Contract{
             if (stickerPrice < 10000) {
                monthlyPayment = stickerPrice * 0.0425;
             } else
-                monthlyPayment = (stickerPrice * 0.0525;
+                monthlyPayment = stickerPrice * 0.0525;
         return monthlyPayment;
     }
 
